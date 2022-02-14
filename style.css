@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	height: 100vh;
+	overflow: hidden;
+	background-color: #000;
+}
+
+span {
+	position: absolute;
+	pointer-events: none;
+	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+	animation: fodInOut 1s linear infinite;
+}
+
+@keyframes fodInOut {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	20%,
+	80% {
+		opacity: 1;
+	}
+}
+
+span::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url(heart.png);
+	background-size: cover;
+	animation: moveSpan 1s linear infinite;
+}
+
+@keyframes moveSpan {
+	0% {
+		transform: translate(0) rotate(0deg);
+	}
+	100% {
+		transform: translate(300px) rotate(360deg);
+	}
+}
